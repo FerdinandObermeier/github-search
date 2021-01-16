@@ -1,11 +1,15 @@
 import './App.css';
 import React from 'react';
+import Avatar from '@material-ui/core/Avatar';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      gitHubUser: [],
+      userRepos: []
+    };
   }
 
   componentDidMount() {
@@ -18,7 +22,6 @@ class App extends React.Component {
         res.json().then(data => {
           this.setState({gitHubUser: data});
           fetch(this.state.gitHubUser.repos_url).then(res => res.json().then(data => {
-            console.log(data);
             this.setState({userRepos: data});
           }));
         }));
@@ -27,7 +30,14 @@ class App extends React.Component {
   render () {
     return (
       <div className="App">
-
+        <div className="user">
+          <Avatar alt="Ferdinand Obermeier" src={this.state.gitHubUser.avatar_url} className="avatar"></Avatar>
+          <div className="name">
+            <b>{this.state.gitHubUser.name}</b>
+            <br></br>
+            <span style={{color: 'lightgray'}}>{this.state.gitHubUser.login}</span>
+          </div>
+        </div>
       </div>
     )
   }

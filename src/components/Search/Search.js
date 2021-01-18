@@ -16,7 +16,8 @@ function Search(props) {
                 <InputAdornment position="start">
                   <SearchIcon></SearchIcon>
                 </InputAdornment>
-              )
+              ),
+              "data-testid": "search-input"
             }}
           >
           </TextField>

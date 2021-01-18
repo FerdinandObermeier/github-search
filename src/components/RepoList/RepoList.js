@@ -23,7 +23,7 @@ function RepoList(props) {
         <div className="cardContainer">
         {props.userRepos.map((repo, index) => {
             return (
-            <Card key={'card'+index} className="card">
+            <Card key={'card'+index} data-testid="card" className="card">
                 <CardHeader
                 avatar={
                     <Avatar aria-label="repo" className="cardAvatar">

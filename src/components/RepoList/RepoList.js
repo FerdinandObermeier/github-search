@@ -1,5 +1,4 @@
 import './RepoList.css';
-import React from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
@@ -23,7 +22,7 @@ function RepoList(props) {
         <div className="cardContainer">
         {props.userRepos.map((repo, index) => {
             return (
-            <Card className="card">
+            <Card key={'card'+index} className="card">
                 <CardHeader
                 avatar={
                     <Avatar aria-label="repo" className="cardAvatar">

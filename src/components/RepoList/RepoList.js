@@ -18,6 +18,7 @@ import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import IconButton from '@material-ui/core/IconButton';
 
 function RepoList(props) {
+    /** Display a card with repo specific information for each repository. The list of repositories may be filtered due to an active search. */
     return ( 
         <div className="cardContainer">
         {props.userRepos.map((repo, index) => {

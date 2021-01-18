@@ -4,6 +4,7 @@ import TextField from '@material-ui/core/TextField';
 import SearchIcon from '@material-ui/icons/Search';
 
 function Search(props) {
+    /** Display a textfield which filters the displayed list of repositories for the entered string by using a callback of the parent (App.js). */
     return (
         <div className="search">
           <TextField

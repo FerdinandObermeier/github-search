@@ -19,5 +19,5 @@ test('searching for "s" results in the displayal of two cards', () => {
   const repoList = render(<RepoList />);
   const searchInput = search.getByTestId('search-input');
   fireEvent.change(searchInput, { target: { value: 's' } });
-  expect(repoList.getAllByLabelText('card')).toHaveLength(2);
+  expect(repoList.getAllByLabelText('card')).toHaveLength(3);
 });

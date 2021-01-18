@@ -1,10 +1,8 @@
 import './App.css';
 import React from 'react';
 import Avatar from '@material-ui/core/Avatar';
-import InputAdornment from '@material-ui/core/InputAdornment';
-import TextField from '@material-ui/core/TextField';
-import SearchIcon from '@material-ui/icons/Search';
 import RepoList from './components/RepoList/RepoList';
+import Search from './components/Search/Search';
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -14,6 +12,8 @@ class App extends React.Component {
       userReposDefault: [],
       userRepos: []
     };
+
+    this.onSearchRepository = this.onSearchRepository.bind(this);
   }
 
   componentDidMount() {
@@ -49,21 +49,7 @@ class App extends React.Component {
           </div>
         </div>
 
-        <div className="search">
-          <TextField
-            label="Search for a repository"
-            variant="outlined"
-            onChange={(e) => this.onSearchRepository(e.target.value)}
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start">
-                  <SearchIcon></SearchIcon>
-                </InputAdornment>
-              )
-            }}
-          >
-          </TextField>
-        </div>
+        <Search onSearch={this.onSearchRepository}></Search>
 
         <RepoList userRepos={this.state.userRepos}></RepoList>
         
